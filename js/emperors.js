@@ -7,6 +7,7 @@
 
 import { Navbar } from "./navbar.js";
 import { PageTransition } from "./page-transition.js";
+
 import { emperors } from "./data.js";
 
 class EmperorGallery {
@@ -27,19 +28,26 @@ class EmperorGallery {
     return result;
   }
 
+  slug(emperor) {
+    return emperor.image.replace(/\.[^/.]+$/, ""); // "augustus.jpg" -> "augustus"
+  }
+
   cardTemplate(emperor, index) {
     return `
       <div class="col-sm-6 col-lg-4">
-        <div class="stele">
-          <span class="numeral">${this.toRoman(index + 1)}</span>
-          <h3>${emperor.name}</h3>
-          <span class="dynasty">${emperor.dynasty}</span>
-          <div class="reign">${emperor.reign}</div>
-          <p class="summary">${emperor.summary}</p>
-        </div>
+        <a class="stele-link" href="emperor.html?id=${this.slug(emperor)}">
+          <div class="stele">
+            <span class="numeral">${this.toRoman(index + 1)}</span>
+            <h3>${emperor.name}</h3>
+            <span class="dynasty">${emperor.dynasty}</span>
+            <div class="reign">${emperor.reign}</div>
+            <p class="summary">${emperor.summary}</p>
+          </div>
+        </a>
       </div>
     `;
   }
+
 
   render() {
     if (!this.container) return;

@@ -13,7 +13,7 @@ export class PageTransition {
 
   init() {
     document.addEventListener("click", (e) => {
-      const link = e.target.closest('a[href$=".html"]');
+      const link = e.target.closest('a[href*=".html"]');
       if (!link || link.target === "_blank" || e.metaKey || e.ctrlKey) return;
 
       e.preventDefault();
