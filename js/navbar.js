@@ -26,7 +26,7 @@ export class Navbar {
       })
       .join("");
 
-    this.mount.innerHTML = `
+    this.mount.outerHTML = `
       <nav class="navbar navbar-imperium navbar-expand-md sticky-top">
         <div class="container">
           <a class="navbar-brand" href="index.html">IMPERIUM <span>ARCHIVE</span></a>
