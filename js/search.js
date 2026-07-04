@@ -10,6 +10,7 @@
 // ============================================================
 
 import { Navbar } from "./navbar.js";
+import { PageTransition } from "./page-transition.js";
 
 const GOOGLE_BOOKS_API_KEY = "AIzaSyC3bsilBOEaeMfgtHg0D4fhUNYtHiDt8wM";
 
@@ -127,6 +128,7 @@ class BookSearch {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  new PageTransition().init();
   new Navbar("#navbar-mount", "search").render();
   new BookSearch({
     formSelector: "#search-form",

@@ -31,12 +31,23 @@ html {
   overflow-y: scroll;
 }
 
+@keyframes page-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 body {
   margin: 0;
   background: var(--stone);
   color: var(--ink);
   font-family: var(--font-body);
   line-height: 1.6;
+  animation: page-fade-in 0.4s ease;
+}
+
+body.page-fade-out {
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 h1, h2, h3, .display {

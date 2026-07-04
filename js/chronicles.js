@@ -7,6 +7,7 @@
 // ============================================================
 
 import { Navbar } from "./navbar.js";
+import { PageTransition } from "./page-transition.js";
 import { conflicts } from "./data.js";
 
 class TabController {
@@ -76,6 +77,7 @@ class TabController {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  new PageTransition().init();
   new Navbar("#navbar-mount", "chronicles").render();
   new TabController("#tab-nav", "#tab-panels", conflicts).init();
 });

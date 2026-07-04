@@ -6,6 +6,7 @@
 // ============================================================
 
 import { Navbar } from "./navbar.js";
+import { PageTransition } from "./page-transition.js";
 import { emperors } from "./data.js";
 
 class EmperorGallery {
@@ -47,6 +48,7 @@ class EmperorGallery {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  new PageTransition().init();
   new Navbar("#navbar-mount", "pantheon").render();
   new EmperorGallery("#emperor-grid", emperors).render();
 });
