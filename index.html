@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imperium Archive — The Imperial Pantheon</title>
+  <meta name="description" content="A chronological archive of Rome's emperors, wars, and writings.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="navbar-mount"></div>
+
+  <header class="hero">
+    <h1>The Imperial Pantheon</h1>
+    <p>Fifteen rulers, three centuries of decisions, one empire. Scroll the archive in chronological order, from Augustus's founding of the Principate to Justinian's final reconquest.</p>
+  </header>
+
+  <main class="section via-container">
+    <div class="section-title">
+      <span class="kicker">27 BCE — 565 CE</span>
+      <h2>The Emperors</h2>
+    </div>
+    <div class="row g-4" id="emperor-grid" aria-live="polite">
+      <!-- Populated by EmperorGallery class in js/emperors.js -->
+    </div>
+  </main>
+
+  <footer>
+    IMPERIUM ARCHIVE &middot; A Full Stack Development Final Project &middot; 2026
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="js/emperors.js"></script>
+</body>
+</html>

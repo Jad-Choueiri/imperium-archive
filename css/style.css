@@ -1,0 +1,262 @@
+/* ============================================================
+   IMPERIUM ARCHIVE — design tokens
+   Palette: limestone / carved ink / Tyrian purple / bronze / verdigris
+   Display: Cinzel (inscription capitals)  |  Body: Source Serif 4
+   Data/dates: JetBrains Mono (reads like carved numerals)
+   ============================================================ */
+
+:root {
+  --stone: #ece4d3;
+  --stone-dark: #ddd1b8;
+  --ink: #241f1c;
+  --ink-soft: #4a423b;
+  --tyrian: #4a1942;
+  --tyrian-light: #6e2b63;
+  --bronze: #a6763e;
+  --bronze-light: #c99a5c;
+  --verdigris: #4c7a6f;
+  --error: #8c3b2e;
+
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius: 2px;
+  --shadow-carved: inset 0 1px 0 rgba(255,255,255,0.4), 0 2px 6px rgba(36,31,28,0.15);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--stone);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--tyrian);
+  font-weight: 600;
+}
+
+a { color: var(--bronze); text-decoration: none; }
+a:hover, a:focus-visible { color: var(--tyrian); text-decoration: underline; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid var(--verdigris);
+  outline-offset: 2px;
+}
+
+.mono { font-family: var(--font-mono); letter-spacing: 0.02em; }
+
+/* ---------- Navbar ---------- */
+.navbar-imperium {
+  background: var(--ink);
+  border-bottom: 3px solid var(--bronze);
+}
+.navbar-imperium .navbar-brand {
+  font-family: var(--font-display);
+  color: var(--stone) !important;
+  letter-spacing: 0.12em;
+  font-size: 1.15rem;
+}
+.navbar-imperium .navbar-brand span { color: var(--bronze-light); }
+.navbar-imperium .nav-link {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--stone-dark) !important;
+  margin-left: 0.5rem;
+}
+.navbar-imperium .nav-link.active { color: var(--bronze-light) !important; }
+
+/* ---------- Hero ---------- */
+.hero {
+  background:
+    linear-gradient(180deg, rgba(36,31,28,0.88), rgba(36,31,28,0.72)),
+    repeating-linear-gradient(90deg, rgba(166,118,62,0.15) 0 2px, transparent 2px 40px);
+  color: var(--stone);
+  padding: 4.5rem 1.5rem 3.5rem;
+  text-align: center;
+}
+.hero h1 { color: var(--stone); font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 0.5rem; }
+.hero p { color: var(--stone-dark); font-family: var(--font-mono); font-size: 0.95rem; max-width: 40rem; margin: 0 auto; }
+
+/* ---------- The Via (chronological rail on index) ---------- */
+.via-container { position: relative; padding: 3rem 1rem; max-width: 1100px; margin: 0 auto; }
+
+/* ---------- Emperor stelae cards ---------- */
+.stele {
+  background: var(--stone);
+  border: 1px solid var(--stone-dark);
+  border-top: 4px solid var(--bronze);
+  box-shadow: var(--shadow-carved);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.stele:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(36,31,28,0.2); }
+.stele .numeral {
+  font-family: var(--font-mono);
+  color: var(--bronze);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+.stele h3 { font-size: 1.15rem; margin: 0.35rem 0 0.15rem; }
+.stele .dynasty {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--verdigris);
+  border: 1px solid var(--verdigris);
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  margin-bottom: 0.6rem;
+  width: fit-content;
+}
+.stele .reign { font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-soft); margin-bottom: 0.6rem; }
+.stele p.summary { font-size: 0.92rem; color: var(--ink-soft); margin: 0; }
+
+/* ---------- Section wrapper ---------- */
+.section { padding: 2.5rem 1rem; max-width: 1100px; margin: 0 auto; }
+.section-title { text-align: center; margin-bottom: 2rem; }
+.section-title .kicker {
+  display: block;
+  font-family: var(--font-mono);
+  color: var(--bronze);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- Search page ---------- */
+.search-bar { max-width: 640px; margin: 0 auto 2rem; }
+.search-bar .form-control, .search-bar .form-select {
+  border-radius: var(--radius);
+  border: 1px solid var(--stone-dark);
+  font-family: var(--font-body);
+}
+.search-bar .btn-imperium {
+  background: var(--tyrian);
+  border: 1px solid var(--tyrian);
+  color: var(--stone);
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+.search-bar .btn-imperium:hover { background: var(--tyrian-light); }
+
+.book-card {
+  background: var(--stone);
+  border: 1px solid var(--stone-dark);
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.book-card img { width: 100%; height: 200px; object-fit: cover; background: var(--stone-dark); }
+.book-card .body { padding: 1rem; flex: 1; display: flex; flex-direction: column; }
+.book-card h3 { font-size: 1rem; margin: 0 0 0.25rem; }
+.book-card .authors { font-family: var(--font-mono); font-size: 0.75rem; color: var(--ink-soft); margin-bottom: 0.5rem; }
+.book-card .desc { font-size: 0.85rem; color: var(--ink-soft); flex: 1; }
+.book-card .badge-format {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--verdigris);
+  color: var(--stone);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  margin-top: 0.5rem;
+}
+
+.state-message {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+.state-message.error { color: var(--error); }
+.spinner-imperium {
+  width: 32px; height: 32px;
+  border: 3px solid var(--stone-dark);
+  border-top-color: var(--bronze);
+  border-radius: 50%;
+  margin: 0 auto 0.75rem;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------- Chronicles tabs (custom UI requirement) ---------- */
+.tab-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--stone-dark);
+  padding-bottom: 1rem;
+}
+.tab-btn {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--bronze);
+  color: var(--tyrian);
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.tab-btn:hover { background: var(--stone-dark); }
+.tab-btn[aria-selected="true"] {
+  background: var(--tyrian);
+  border-color: var(--tyrian);
+  color: var(--stone);
+}
+.tab-panel { display: none; animation: fadein 0.2s ease; }
+.tab-panel.active { display: block; }
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+
+.conflict-card {
+  background: var(--stone);
+  border-left: 4px solid var(--verdigris);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: var(--radius);
+}
+.conflict-card .date { font-family: var(--font-mono); font-size: 0.75rem; color: var(--bronze); }
+.conflict-card h4 { margin: 0.2rem 0 0.4rem; font-family: var(--font-display); font-size: 1.05rem; color: var(--tyrian); }
+
+/* ---------- Footer ---------- */
+footer {
+  background: var(--ink);
+  color: var(--stone-dark);
+  text-align: center;
+  padding: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  margin-top: 3rem;
+}
+
+@media (max-width: 576px) {
+  .hero { padding: 3rem 1rem 2.5rem; }
+  .section { padding: 2rem 0.75rem; }
+}

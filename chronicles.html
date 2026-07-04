@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imperium Archive — The Campaign Chronicles</title>
+  <meta name="description" content="An interactive war room detailing Rome's most consequential conflicts.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="navbar-mount"></div>
+
+  <header class="hero">
+    <h1>The Campaign Chronicles</h1>
+    <p>Three eras, six wars. Select an era below to open its dossier — no page reload required.</p>
+  </header>
+
+  <!--
+    CUSTOM UI REQUIREMENT: Tabbed navigation implemented in JavaScript
+    (TabController class, js/chronicles.js). Buttons below are generated
+    dynamically from data.js and toggle .tab-panel visibility on click.
+  -->
+  <main class="section">
+    <div class="tab-nav" id="tab-nav" role="tablist" aria-label="Roman War Eras"></div>
+    <div id="tab-panels"></div>
+  </main>
+
+  <footer>
+    IMPERIUM ARCHIVE &middot; A Full Stack Development Final Project &middot; 2026
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="js/chronicles.js"></script>
+</body>
+</html>
