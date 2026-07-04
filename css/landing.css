@@ -1,0 +1,147 @@
+/* ============================================================
+   landing.css — styles specific to the cinematic index.html
+   Loaded alongside style.css (which still supplies the shared
+   navbar, tokens, and footer used across every page).
+   ============================================================ */
+
+/* ---------- Fixed background layers (scroll-fade engine) ---------- */
+.bg-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  background-size: cover;
+  background-position: center;
+}
+
+#bg-culture {
+  background-image:
+    linear-gradient(180deg, rgba(36,31,28,0.15), rgba(236,228,211,0.4)),
+    repeating-linear-gradient(90deg, rgba(166,118,62,0.25) 0 3px, transparent 3px 60px);
+}
+#bg-legacy {
+  background-image:
+    linear-gradient(180deg, rgba(74,25,66,0.12), rgba(236,228,211,0.4)),
+    radial-gradient(circle at 30% 20%, rgba(74,25,66,0.18), transparent 60%);
+}
+#bg-mind {
+  background-image:
+    linear-gradient(180deg, rgba(76,122,111,0.14), rgba(236,228,211,0.4)),
+    radial-gradient(circle at 70% 60%, rgba(76,122,111,0.2), transparent 60%);
+}
+
+.bg-layer.active { opacity: 0.28; }
+
+/* ---------- Hero: The Imperial Prologue ---------- */
+.prologue {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(180deg, var(--ink) 0%, #362d27 55%, var(--stone) 100%);
+  color: var(--stone);
+  padding: 2rem 1.25rem;
+}
+
+.prologue-inner { max-width: 42rem; }
+
+.prologue .kicker {
+  display: block;
+  font-family: var(--font-mono);
+  color: var(--bronze-light);
+  letter-spacing: 0.25em;
+  font-size: 0.8rem;
+  margin-bottom: 1.25rem;
+}
+
+.prologue-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 8vw, 5.5rem);
+  line-height: 1.05;
+  letter-spacing: 0.06em;
+  color: var(--stone);
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.35);
+}
+
+.quote-container {
+  border-top: 1px solid rgba(201,154,92,0.4);
+  border-bottom: 1px solid rgba(201,154,92,0.4);
+  padding: 1.25rem 1rem;
+  margin: 0 auto 2rem;
+  max-width: 34rem;
+  min-height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote-text {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--stone-dark);
+  margin: 0;
+}
+.quote-text .attribution {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bronze-light);
+}
+
+.scroll-cue {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--stone-dark);
+  border-bottom: 1px solid transparent;
+}
+.scroll-cue:hover { color: var(--bronze-light); border-color: var(--bronze-light); }
+
+/* ---------- Narrative scroll section ---------- */
+.narrative-block {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.25rem;
+}
+
+.narrative-inner {
+  max-width: 38rem;
+  text-align: center;
+}
+
+.narrative-inner .kicker {
+  display: block;
+  font-family: var(--font-display);
+  color: var(--bronze);
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.75rem;
+}
+
+.narrative-inner h2 { font-size: clamp(1.6rem, 4vw, 2.25rem); margin-bottom: 1.5rem; }
+
+.narrative-inner p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 576px) {
+  .prologue { min-height: 92vh; }
+  .narrative-block { min-height: 80vh; padding: 3rem 1rem; }
+}

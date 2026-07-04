@@ -1,0 +1,13 @@
+// ============================================================
+// index-page.js — bootstraps the cinematic landing page
+// ============================================================
+
+import { Navbar } from "./navbar.js";
+import { ScrollNarrative } from "./narrative.js";
+import { QuoteLoader } from "./quote.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+  new Navbar("#navbar-mount", "home").render();
+  new ScrollNarrative(".narrative-block").init();
+  new QuoteLoader("#quote-container").load();
+});

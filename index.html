@@ -3,32 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Imperium Archive — The Imperial Pantheon</title>
-  <meta name="description" content="A chronological archive of Rome's emperors, wars, and writings.">
+  <title>Imperium Archive — The Imperial Prologue</title>
+  <meta name="description" content="A cinematic entry point into the Imperium Archive: Rome's culture, legacy, and philosophy.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/landing.css">
 </head>
 <body>
 
+  <!-- Fixed background layers for the scroll-fade engine. Sit behind everything (z-index: -1),
+       opacity toggled by ScrollNarrative via IntersectionObserver in js/narrative.js -->
+  <div class="bg-layer" id="bg-culture"></div>
+  <div class="bg-layer" id="bg-legacy"></div>
+  <div class="bg-layer" id="bg-mind"></div>
+
   <div id="navbar-mount"></div>
 
-  <header class="hero">
-    <h1>The Imperial Pantheon</h1>
-    <p>Fifteen rulers, three centuries of decisions, one empire. Scroll the archive in chronological order, from Augustus's founding of the Principate to Justinian's final reconquest.</p>
+  <!-- ============== HERO: The Imperial Prologue ============== -->
+  <header class="prologue">
+    <div class="prologue-inner">
+      <span class="kicker">SPQR &middot; 27 BCE — 1453 CE</span>
+      <h1 class="prologue-title">IMPERIUM<br>ARCHIVE</h1>
+      <div id="quote-container" class="quote-container" aria-live="polite">
+        <p class="quote-text">Loading today's counsel from Rome…</p>
+      </div>
+      <a class="scroll-cue" href="#narrative">Scroll to begin &darr;</a>
+    </div>
   </header>
 
-  <main class="section via-container">
-    <div class="section-title">
-      <span class="kicker">27 BCE — 565 CE</span>
-      <h2>The Emperors</h2>
-    </div>
-    <div class="row g-4" id="emperor-grid" aria-live="polite">
-      <!-- Populated by EmperorGallery class in js/emperors.js -->
-    </div>
+  <!-- ============== NARRATIVE SCROLL SECTION ============== -->
+  <main id="narrative" class="narrative">
+
+    <section class="narrative-block" data-bg="bg-culture">
+      <div class="narrative-inner">
+        <span class="kicker">I.</span>
+        <h2>Culture &amp; Conquest</h2>
+        <p>Rome's turn from Republic to Empire was not a single event but a slow collapse of consensus, ending when Augustus folded the machinery of the state around one man. What outlasted the politics was the engineering: aqueducts that moved water across entire provinces, roads built straight and durable enough that some are still walked today, and a professional legion system that turned soldiering into a lifelong trade rather than a seasonal levy.</p>
+        <p>That combination — centralized authority paired with relentless infrastructure — is what let a Mediterranean city-state administer a territory stretching from Britain to Mesopotamia.</p>
+      </div>
+    </section>
+
+    <section class="narrative-block" data-bg="bg-legacy">
+      <div class="narrative-inner">
+        <span class="kicker">II.</span>
+        <h2>The Global Legacy</h2>
+        <p>Rome's afterlife runs directly through modern institutions. Its law codes established the idea of codified, written statute as the basis for justice, an approach later legal systems across Europe and the Americas built on directly. Its republican architecture, columns, domes, and civic forums, was consciously revived centuries later by architects designing courthouses and capitols meant to signal legitimacy and permanence.</p>
+        <p>Latin itself split into the Romance languages and supplied the technical vocabulary of law, medicine, and science, while the Julian calendar's basic structure of months still governs how the modern world tracks its years.</p>
+      </div>
+    </section>
+
+    <section class="narrative-block" data-bg="bg-mind">
+      <div class="narrative-inner">
+        <span class="kicker">III.</span>
+        <h2>The Mind of Rome</h2>
+        <p>Roman philosophy borrowed heavily from Greece but gave Stoicism its most practical, governing-class expression. No figure embodies that better than Marcus Aurelius, an emperor who spent much of his reign on campaign along the Danube frontier while privately writing what became the Meditations, a set of notes to himself about discipline, mortality, and control over one's own reactions.</p>
+        <p>His writing turned Stoic resilience into something closer to a personal operating manual, one still read by people who have never opened a Roman history book at all.</p>
+      </div>
+    </section>
+
   </main>
 
   <footer>
@@ -36,6 +72,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script type="module" src="js/emperors.js"></script>
+  <script type="module" src="js/index-page.js"></script>
 </body>
 </html>

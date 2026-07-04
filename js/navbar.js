@@ -7,9 +7,10 @@
 export class Navbar {
   constructor(mountSelector, activePage) {
     this.mount = document.querySelector(mountSelector);
-    this.activePage = activePage; // 'index' | 'search' | 'chronicles'
+    this.activePage = activePage; // 'home' | 'pantheon' | 'search' | 'chronicles'
     this.links = [
-      { id: "index", href: "index.html", label: "Pantheon" },
+      { id: "home", href: "index.html", label: "Home" },
+      { id: "pantheon", href: "pantheon.html", label: "The Emperors" },
       { id: "search", href: "search.html", label: "Bibliotheca" },
       { id: "chronicles", href: "chronicles.html", label: "Chronicles" }
     ];
@@ -26,7 +27,7 @@ export class Navbar {
       .join("");
 
     this.mount.innerHTML = `
-      <nav class="navbar navbar-imperium navbar-expand-md">
+      <nav class="navbar navbar-imperium navbar-expand-md sticky-top">
         <div class="container">
           <a class="navbar-brand" href="index.html">IMPERIUM <span>ARCHIVE</span></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent"

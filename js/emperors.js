@@ -47,6 +47,6 @@ class EmperorGallery {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  new Navbar("#navbar-mount", "index").render();
+  new Navbar("#navbar-mount", "pantheon").render();
   new EmperorGallery("#emperor-grid", emperors).render();
 });
