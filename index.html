@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="view-transition" content="same-origin">
   <title>Imperium Archive — The Imperial Prologue</title>
   <meta name="description" content="A cinematic entry point into the Imperium Archive: Rome's culture, legacy, and philosophy.">
 
@@ -17,6 +18,7 @@
 
   <!-- Fixed background layers for the scroll-fade engine. Sit behind everything (z-index: -1),
        opacity toggled by ScrollNarrative via IntersectionObserver in js/narrative.js -->
+  <div class="bg-layer active" id="bg-hero"></div>
   <div class="bg-layer" id="bg-culture"></div>
   <div class="bg-layer" id="bg-legacy"></div>
   <div class="bg-layer" id="bg-mind"></div>
@@ -24,7 +26,7 @@
   <div id="navbar-mount"></div>
 
   <!-- ============== HERO: The Imperial Prologue ============== -->
-  <header class="prologue">
+  <header class="prologue" data-bg="bg-hero">
     <div class="prologue-inner">
       <span class="kicker">SPQR &middot; 27 BCE — 1453 CE</span>
       <h1 class="prologue-title">IMPERIUM<br>ARCHIVE</h1>

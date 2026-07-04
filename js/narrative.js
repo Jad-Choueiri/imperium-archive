@@ -7,7 +7,7 @@
 export class ScrollNarrative {
   constructor(blockSelector) {
     this.blocks = document.querySelectorAll(blockSelector);
-    this.currentActiveId = null;
+    this.currentActiveId = "bg-hero";
   }
 
   activateBackground(targetId) {

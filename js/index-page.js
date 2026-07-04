@@ -8,6 +8,6 @@ import { QuoteLoader } from "./quote.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   new Navbar("#navbar-mount", "home").render();
-  new ScrollNarrative(".narrative-block").init();
+  new ScrollNarrative(".prologue, .narrative-block").init();
   new QuoteLoader("#quote-container").load();
 });

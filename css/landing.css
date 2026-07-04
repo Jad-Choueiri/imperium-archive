@@ -43,10 +43,15 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(180deg, var(--ink) 0%, #362d27 55%, var(--stone) 100%);
   color: var(--stone);
   padding: 2rem 1.25rem;
 }
+
+#bg-hero {
+  background-image: linear-gradient(180deg, var(--ink) 0%, #362d27 55%, var(--stone) 100%);
+}
+
+#bg-hero.active { opacity: 1; }
 
 .prologue-inner { max-width: 42rem; }
 
