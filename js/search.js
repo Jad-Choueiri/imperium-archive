@@ -48,7 +48,11 @@ class BookSearch {
     this.setStatus(`<div class="spinner-imperium"></div>Unrolling scrolls…`);
 
     try {
-      const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&maxResults=24&key=${GOOGLE_BOOKS_API_KEY}`;
+      // Silently bias every search toward Roman history, regardless of what
+      // the user actually typed — keeps results on-theme even for unrelated
+      // queries like "cooking" or "law".
+      const biasedQuery = `${encodeURIComponent(query)}+subject:history+subject:rome`;
+      const url = `https://www.googleapis.com/books/v1/volumes?q=${biasedQuery}&maxResults=24&key=${GOOGLE_BOOKS_API_KEY}`;
       const response = await fetch(url);
 
       if (!response.ok) {
