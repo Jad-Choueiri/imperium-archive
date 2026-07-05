@@ -10,6 +10,7 @@
 // ============================================================
 
 import { Navbar } from "./navbar.js";
+import { VideoSearch } from "./video-search.js";
 import { PageTransition } from "./page-transition.js";
 
 const GOOGLE_BOOKS_API_KEY = "AIzaSyC3bsilBOEaeMfgtHg0D4fhUNYtHiDt8wM";
@@ -25,7 +26,9 @@ class BookSearch {
 
     this.form.addEventListener("submit", (e) => {
       e.preventDefault();
-      this.search(this.input.value.trim());
+      const query = this.input.value.trim();
+      this.search(query);
+      if (this.videoSearch) this.videoSearch.search(query);
     });
 
     this.filter.addEventListener("change", () => this.applyFilter());
@@ -134,11 +137,25 @@ class BookSearch {
 document.addEventListener("DOMContentLoaded", () => {
   new PageTransition().init();
   new Navbar("#navbar-mount", "search").render();
-  new BookSearch({
+  const bookSearch = new BookSearch({
     formSelector: "#search-form",
     inputSelector: "#search-input",
     filterSelector: "#format-filter",
     resultsSelector: "#book-results",
     statusSelector: "#search-status"
   });
+  bookSearch.videoSearch = new VideoSearch({
+    resultsSelector: "#video-results",
+    statusSelector: "#video-status"
+  });
+
+  // If arriving from a "Research this war" link (e.g. from Chronicles),
+  // auto-fill the search box and run the search immediately.
+  const presetQuery = new URLSearchParams(window.location.search).get("q");
+  if (presetQuery) {
+    document.querySelector("#search-input").value = presetQuery;
+    bookSearch.search(presetQuery);
+    bookSearch.videoSearch.search(presetQuery);
+  }
+
 });
