@@ -1,8 +1,7 @@
 // ============================================================
 // emperors.js — EmperorGallery class
 // Renders the 15 emperors from data.js into card ("stele") markup.
-// Demonstrates dynamic content injection via a JS class + loop, as
-// required by the assignment brief.
+// Demonstrates dynamic content injection via a JS class + loop
 // ============================================================
 
 import { Navbar } from "./navbar.js";

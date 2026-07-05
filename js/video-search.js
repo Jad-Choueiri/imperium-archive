@@ -4,10 +4,6 @@
 // biasing every search toward Roman history, same trick as BookSearch.
 // Runs alongside BookSearch as an independent grid + status pair, so
 // a YouTube failure never blocks book results (or vice versa).
-//
-// NOTE: Replace YOUTUBE_API_KEY below with your own key from
-// https://console.cloud.google.com/apis/credentials (Enable
-// "YouTube Data API v3" first).
 // ============================================================
 
 const YOUTUBE_API_KEY = "AIzaSyC3bsilBOEaeMfgtHg0D4fhUNYtHiDt8wM";
