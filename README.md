@@ -27,6 +27,10 @@ Imperium Archive is built around three ideas: real, hand-written content (not pl
 
 All three keys are restricted where the provider's dashboard allows it (Google Cloud Console: both keys are limited to `imperium-archive.vercel.app/*` and `localhost/*` under Application Restrictions).
 
+## Responsive Design Evidence
+
+Screenshots of the site at mobile (iPhone SE), tablet (iPad Air), and desktop widths are included in the `Responsiveness_Screenshots/` folder in this repository.
+
 ## Custom UI Requirement: Tabbed Navigation (JavaScript)
 
 **Where:** `chronicles.html` / `js/chronicles.js` (`TabController` class)
