@@ -27,7 +27,7 @@ export class Navbar {
       .join("");
 
     this.mount.outerHTML = `
-      <nav class="navbar navbar-imperium navbar-expand-md sticky-top">
+      <nav class="navbar navbar-dark navbar-imperium navbar-expand-md sticky-top">
         <div class="container">
           <a class="navbar-brand" href="index.html">IMPERIUM <span>ARCHIVE</span></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent"
