@@ -281,7 +281,51 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+
+/* ---------- Era banner (Chronicles) ---------- */
+.era-banner {
+  position: relative;
+  height: 560px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  background: var(--ink);
+}
+
+@media (max-width: 576px) {
+  .era-banner { height: 320px; }
+}
+
+
+.era-banner-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.era-banner-layer.active { opacity: 1; }
+
+#era-bg-early {
+  background-image:
+    linear-gradient(180deg, rgba(36,31,28,0.55), rgba(36,31,28,0.25)),
+    url("../assets/img/eras/early.jpg");
+}
+#era-bg-pax {
+  background-image:
+    linear-gradient(180deg, rgba(74,25,66,0.5), rgba(36,31,28,0.25)),
+    url("../assets/img/eras/pax.jpg");
+}
+#era-bg-crisis {
+  background-image:
+    linear-gradient(180deg, rgba(76,122,111,0.5), rgba(36,31,28,0.25)),
+    url("../assets/img/eras/crisis.jpg");
+}
+
 /* ---------- Chronicles tabs (custom UI requirement) ---------- */
+
+
 .tab-nav {
   display: flex;
   flex-wrap: wrap;
@@ -324,6 +368,47 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .conflict-card .date { font-family: var(--font-mono); font-size: 0.75rem; color: var(--bronze); }
 .conflict-card h4 { margin: 0.2rem 0 0.4rem; font-family: var(--font-display); font-size: 1.05rem; color: var(--tyrian); }
 
+.key-figures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+.figure-chip {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  background: var(--stone-dark);
+  color: var(--ink-soft);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+.conflict-card .outcome {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--stone-dark);
+  padding-top: 0.6rem;
+}
+.conflict-card .outcome .label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--verdigris);
+  margin-right: 0.4rem;
+}
+
+.related-emperor {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--bronze);
+}
 /* ---------- Footer ---------- */
 footer {
   background: var(--ink);

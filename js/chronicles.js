@@ -19,11 +19,26 @@ class TabController {
   }
 
   conflictCard(item) {
+    const figuresHtml = item.keyFigures
+      ? `<div class="key-figures">${item.keyFigures.map(f => `<span class="figure-chip">${f}</span>`).join("")}</div>`
+      : "";
+
+    const outcomeHtml = item.outcome
+      ? `<div class="outcome"><span class="label">Outcome</span> ${item.outcome}</div>`
+      : "";
+
+    const relatedLinkHtml = item.relatedEmperor
+      ? `<a class="related-emperor" href="emperor.html?id=${item.relatedEmperor}">View emperor profile &rarr;</a>`
+      : "";
+
     return `
       <div class="conflict-card">
         <div class="date">${item.date}</div>
         <h4>${item.name}</h4>
         <p>${item.description}</p>
+        ${figuresHtml}
+        ${outcomeHtml}
+        ${relatedLinkHtml}
       </div>
     `;
   }
@@ -68,11 +83,19 @@ class TabController {
         panel.setAttribute("hidden", "");
       }
     });
+    this.activateBanner(key);
+  }
+
+  activateBanner(key) {
+    document.querySelectorAll(".era-banner-layer").forEach(layer => {
+      layer.classList.toggle("active", layer.id === `era-bg-${key}`);
+    });
   }
 
   init() {
     this.buildMarkup();
     this.bindEvents();
+    this.activate(this.tabKeys[0]); // show the first era's banner immediately
   }
 }
 

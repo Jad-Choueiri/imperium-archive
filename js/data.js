@@ -119,27 +119,42 @@ export const conflicts = {
     label: "The Republic & Rise",
     items: [
       { name: "The Punic Wars", date: "264 – 146 BCE",
-        description: "Three wars against Carthage, including Hannibal's famous crossing of the Alps, that ended with Rome's total destruction of its rival and control of the western Mediterranean." },
+        description: "Three wars against Carthage, including Hannibal's famous crossing of the Alps, that ended with Rome's total destruction of its rival and control of the western Mediterranean.",
+        keyFigures: ["Hannibal Barca", "Scipio Africanus"],
+        outcome: "Carthage destroyed; Rome gains control of the western Mediterranean." },
       { name: "The Conquest of Greece", date: "214 – 146 BCE",
-        description: "A series of Macedonian and Achaean wars through which Rome absorbed the Hellenistic kingdoms, adopting much of Greek culture, art, and philosophy in the process." }
+        description: "A series of Macedonian and Achaean wars through which Rome absorbed the Hellenistic kingdoms, adopting much of Greek culture, art, and philosophy in the process.",
+        keyFigures: ["Philip V of Macedon", "Perseus of Macedon"],
+        outcome: "Macedon and the Greek city-states absorbed into Roman control." }
     ]
   },
   pax: {
     label: "The Pax Romana & Expansion",
     items: [
       { name: "Caesar's Civil War", date: "49 – 45 BCE",
-        description: "Julius Caesar's crossing of the Rubicon triggered a war against Pompey and the Senate that ended the Republic in all but name and set the stage for Augustus's empire." },
+        description: "Julius Caesar's crossing of the Rubicon triggered a war against Pompey and the Senate that ended the Republic in all but name and set the stage for Augustus's empire.",
+        keyFigures: ["Julius Caesar", "Pompey the Great"],
+        outcome: "Caesar victorious; the Republic's collapse paves the way for Augustus's empire.",
+        relatedEmperor: "augustus" },
       { name: "Trajan's Dacian Wars", date: "101 – 106 CE",
-        description: "Two brutal campaigns north of the Danube that conquered the kingdom of Dacia, funding a wave of construction in Rome and pushing the empire to its largest territorial extent." }
+        description: "Two brutal campaigns north of the Danube that conquered the kingdom of Dacia, funding a wave of construction in Rome and pushing the empire to its largest territorial extent.",
+        keyFigures: ["Trajan", "Decebalus"],
+        outcome: "Dacia annexed as a province; its gold funds a wave of construction in Rome.",
+        relatedEmperor: "trajan" }
     ]
   },
   crisis: {
     label: "The Crisis & Restoration",
     items: [
       { name: "The Marcomannic Wars", date: "166 – 180 CE",
-        description: "Years of grinding conflict against Germanic tribes along the Danube frontier, fought personally by Marcus Aurelius and often marked as the beginning of three centuries of border pressure." },
+        description: "Years of grinding conflict against Germanic tribes along the Danube frontier, fought personally by Marcus Aurelius and often marked as the beginning of three centuries of border pressure.",
+        keyFigures: ["Marcus Aurelius", "Marcomanni and Quadi tribes"],
+        outcome: "Frontier stabilized at great cost; marks the beginning of centuries of border pressure.",
+        relatedEmperor: "marcus-aurelius" },
       { name: "The Aurelian Restoration", date: "270 – 275 CE",
-        description: "Emperor Aurelian reunified an empire that had fractured into three competing states, earning the title 'Restorer of the World' and stabilizing Rome after the Crisis of the Third Century." }
+        description: "Emperor Aurelian reunified an empire that had fractured into three competing states, earning the title 'Restorer of the World' and stabilizing Rome after the Crisis of the Third Century.",
+        keyFigures: ["Aurelian", "Zenobia of Palmyra"],
+        outcome: "The splintered empire reunified under Aurelian's sole rule." }
     ]
   }
 };
