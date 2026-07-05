@@ -102,8 +102,10 @@ class BookSearch {
   cardTemplate(book) {
     const info = book.volumeInfo || {};
     const access = book.accessInfo || {};
-    const thumb = (info.imageLinks && (info.imageLinks.thumbnail || info.imageLinks.smallThumbnail))
-      || "https://placehold.co/200x280/ddd1b8/4a1942?text=No+Cover";
+    const rawThumb = info.imageLinks && (info.imageLinks.thumbnail || info.imageLinks.smallThumbnail);
+    const thumb = rawThumb
+      ? rawThumb.replace(/^http:\/\//i, "https://")
+      : "https://placehold.co/200x280/ddd1b8/4a1942?text=No+Cover";
     const authors = info.authors ? info.authors.join(", ") : "Unknown author";
     const desc = info.description ? this.truncate(info.description, 140) : "No description available.";
     const isFreeEbook = access.epub && access.epub.isAvailable;
