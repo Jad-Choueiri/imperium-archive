@@ -108,7 +108,7 @@ export const emperors = [
     summary: "Ruling from Constantinople, he temporarily reconquered much of the western Mediterranean, codified Roman law in the Corpus Juris Civilis, and built the Hagia Sophia. His reign is often treated as the last great flowering of a unified Roman world.",
     funFact: "His legal code, the Corpus Juris Civilis, directly influenced the legal systems of most of continental Europe centuries later.",
     bio: [
-      "Ruling from Constantinople two centuries after Rome itself had fallen to Germanic kingdoms, Justinian pursued an ambitious project to restore the empire's former glory. His general Belisarius reconquered North Africa and much of Italy, briefly reuniting most of the old Roman Mediterranean under one ruler again.",
+      "Ruling from Constantinople roughly half a century after Rome itself had fallen to Germanic kingdoms, Justinian pursued an ambitious project to restore the empire's former glory. His general Belisarius reconquered North Africa and much of Italy, briefly reuniting most of the old Roman Mediterranean under one ruler again.",
       "His most lasting achievement wasn't military: the Corpus Juris Civilis, a sweeping codification of Roman law, became the foundation of legal systems across continental Europe for centuries after. He also rebuilt Constantinople's Hagia Sophia into the architectural marvel that still stands today."
     ] }
 ];
