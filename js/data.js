@@ -133,7 +133,7 @@ export const conflicts = {
     items: [
       { name: "Caesar's Civil War", date: "49 – 45 BCE",
         description: "Julius Caesar's crossing of the Rubicon triggered a war against Pompey and the Senate that ended the Republic in all but name and set the stage for Augustus's empire.",
-        keyFigures: ["Julius Caesar", "Pompey the Great"],
+        keyFigures: ["Julius Caesar", "Pompey the Great", "Augustus"],
         outcome: "Caesar victorious; the Republic's collapse paves the way for Augustus's empire.",
         relatedEmperor: "augustus" },
       { name: "Trajan's Dacian Wars", date: "101 – 106 CE",

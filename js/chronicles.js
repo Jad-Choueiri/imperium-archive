@@ -8,7 +8,7 @@
 
 import { Navbar } from "./navbar.js";
 import { PageTransition } from "./page-transition.js";
-import { conflicts } from "./data.js";
+import { conflicts, emperors } from "./data.js";
 
 class TabController {
   constructor(navSelector, panelContainerSelector, data) {
@@ -18,18 +18,28 @@ class TabController {
     this.tabKeys = Object.keys(data); // ['early', 'pax', 'crisis']
   }
 
+  slugFor(emperor) {
+    return emperor.image.replace(/\.[^/.]+$/, "");
+  }
+
+  figureChip(figureName) {
+    const matchedEmperor = emperors.find(e => e.name === figureName);
+    if (!matchedEmperor) {
+      return `<span class="figure-chip">${figureName}</span>`;
+    }
+    return `<a class="figure-chip figure-chip-link" href="emperor.html?id=${this.slugFor(matchedEmperor)}">${figureName}</a>`;
+  }
+
   conflictCard(item) {
     const figuresHtml = item.keyFigures
-      ? `<div class="key-figures">${item.keyFigures.map(f => `<span class="figure-chip">${f}</span>`).join("")}</div>`
+      ? `<div class="key-figures">${item.keyFigures.map(f => this.figureChip(f)).join("")}</div>`
       : "";
 
     const outcomeHtml = item.outcome
       ? `<div class="outcome"><span class="label">Outcome</span> ${item.outcome}</div>`
       : "";
 
-    const relatedLinkHtml = item.relatedEmperor
-      ? `<a class="related-emperor" href="emperor.html?id=${item.relatedEmperor}">View emperor profile &rarr;</a>`
-      : "";
+    const researchLinkHtml = `<a class="research-link" href="search.html?q=${encodeURIComponent(item.name)}">Research this war in the Bibliotheca &rarr;</a>`;
 
     return `
       <div class="conflict-card">
@@ -38,7 +48,7 @@ class TabController {
         <p>${item.description}</p>
         ${figuresHtml}
         ${outcomeHtml}
-        ${relatedLinkHtml}
+        ${researchLinkHtml}
       </div>
     `;
   }
