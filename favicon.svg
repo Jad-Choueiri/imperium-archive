@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#241f1c"/>
+  <rect x="2" y="2" width="60" height="60" fill="none" stroke="#a6763e" stroke-width="2"/>
+  <text x="32" y="42" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700"
+        fill="#ece4d3" text-anchor="middle" letter-spacing="1">IA</text>
+</svg>
